@@ -1,3 +1,5 @@
+"use strict"
+
 const API_URL = 'https://raw.githubusercontent.com/konvwolf/JSON/master'
 
 const cartImage = "https://placeimg.com/100/80/tech"
@@ -5,13 +7,7 @@ const userCart = []
 
 const makeGETRequest = (url) => {
 	return new Promise((res, rej) => {
-		let xhr
-
-		if (window.XMLHttpRequest) {
-			xhr = new XMLHttpRequest()
-		} else if (window.ActiveXObject) {
-			xhr = new ActiveXObject("Microsoft.XMLHTTP")
-		}
+		let xhr = new XMLHttpRequest()
 
 		xhr.open('GET', url, true)
 
